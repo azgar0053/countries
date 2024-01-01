@@ -5,6 +5,7 @@ import './App.css';
 
 function App() {
   const [data, setData]=useState([])
+  const [isLoading, setIsLoading]= useState(true)
 
   const fetchData=async ()=>{
       try {
@@ -13,6 +14,8 @@ function App() {
           setData(result)       
       } catch (error) {
           console.error(error)
+      }finally{
+        setIsLoading(false)
       }
   }
 
@@ -22,14 +25,14 @@ function App() {
 
   return (
     <div className="App">
-      {data?      <>
+      {isLoading?  <h1>Loading...</h1>  :  <>
       <h1>Country Data</h1>
       <div className='dataDiv'>
         {data.map((ele)=>
           <Card image={ele.flags.png} imgName={ele.name.common} city={ele.name.common}/>
         )}
       </div>
-      </>:<h1>Loading...</h1>}
+      </>}
 
 
     </div>
