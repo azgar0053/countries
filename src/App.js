@@ -11,11 +11,10 @@ function App() {
       try {
           const res =await  fetch('https://restcountries.com/v3.1/all');
           const result = await res.json();
-          setData(result)       
+          setData(result)
+          setIsLoading(false)       
       } catch (error) {
           console.log(error)
-      }finally{
-        setIsLoading(false)
       }
   }
 
@@ -25,14 +24,16 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading?  <h1>Loading...</h1>  :  <>
-      <h1>Country Data</h1>
-      <div className='dataDiv'>
-        {data.map((ele)=>
-          <Card image={ele.flags.png} imgName={ele.name.common} city={ele.name.common}/>
-        )}
-      </div>
-      </>}
+      {isLoading?  <h1>Loading...</h1>  :  
+      <>
+        <h1>Country Data</h1>
+          <div className='dataDiv'>
+            {data.map((ele)=>
+              <Card image={ele.flags.png} imgName={ele.name.common} city={ele.name.common}/>
+            )}
+          </div>
+      </>
+      }
 
 
     </div>
