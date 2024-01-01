@@ -1,0 +1,13 @@
+.cardDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid #cacaca;
+}
+.cardDiv > img {
+    width: 100%;
+    height: 100px;
+}
