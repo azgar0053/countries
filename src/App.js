@@ -13,7 +13,7 @@ function App() {
           const result = await res.json();
           setData(result)       
       } catch (error) {
-          console.error(error)
+          console.log(error)
       }finally{
         setIsLoading(false)
       }
