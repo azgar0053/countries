@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 150px;
     height: 150px;
     border-radius: 5px;
     border: 1px solid #cacaca;
 }
 .cardDiv > img {
-    width: 100%;
+    width: 60%;
     height: 100px;
 }
